@@ -1,0 +1,14 @@
+E:\Repo\FushionSite\FushionSite\FushionSiteEntityLibrary\bin\Debug\FushionSiteEntityLibrary.dll.config
+E:\Repo\FushionSite\FushionSite\FushionSiteEntityLibrary\bin\Debug\FushionSiteEntityLibrary.dll
+E:\Repo\FushionSite\FushionSite\FushionSiteEntityLibrary\bin\Debug\FushionSiteEntityLibrary.pdb
+E:\Repo\FushionSite\FushionSite\FushionSiteEntityLibrary\bin\Debug\EntityFramework.dll
+E:\Repo\FushionSite\FushionSite\FushionSiteEntityLibrary\bin\Debug\EntityFramework.SqlServer.dll
+E:\Repo\FushionSite\FushionSite\FushionSiteEntityLibrary\bin\Debug\Seo.dll
+E:\Repo\FushionSite\FushionSite\FushionSiteEntityLibrary\bin\Debug\Seo.pdb
+E:\Repo\FushionSite\FushionSite\FushionSiteEntityLibrary\bin\Debug\EntityFramework.xml
+E:\Repo\FushionSite\FushionSite\FushionSiteEntityLibrary\bin\Debug\EntityFramework.SqlServer.xml
+E:\Repo\FushionSite\FushionSite\FushionSiteEntityLibrary\obj\Debug\FashionSiteEntityLibrary.csprojResolveAssemblyReference.cache
+E:\Repo\FushionSite\FushionSite\FushionSiteEntityLibrary\obj\Debug\FushionSiteEntityLibrary.Properties.Resources.resources
+E:\Repo\FushionSite\FushionSite\FushionSiteEntityLibrary\obj\Debug\FashionSiteEntityLibrary.csproj.GenerateResource.Cache
+E:\Repo\FushionSite\FushionSite\FushionSiteEntityLibrary\obj\Debug\FushionSiteEntityLibrary.dll
+E:\Repo\FushionSite\FushionSite\FushionSiteEntityLibrary\obj\Debug\FushionSiteEntityLibrary.pdb

@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Admin - Yeni Kategori Ekle";
+    Layout = "~/Areas/Administrator/Views/AdministratorLayout.cshtml";
+}
+<section class="content">
+    <div class="contentici">
+        @using (Html.BeginForm("CategoryAdd", "NewCategory", FormMethod.Post, new { @class = "ac-checkbox ac-checkmark yazi_form" }))
+        {
+            <div class="yazibaslik">
+                <input type="text" name="categoryName" placeholder="Kategori Başlığı">
+            </div>
+            <div class="sidebar">
+                <div class="sidebaric">
+                    <div class="sidebarbaslik">KATEGORİLER</div>
+                    <ul class="ac-custom">
+                        @foreach (var item in (IEnumerable<FashionSiteEntityLibrary.CategoryEntity.CategoriesTable>)ViewBag.SendCategories)
+                        {
+                            <li>
+                                <input id="kategori_1" name="kategoriler" type="radio">
+                                <label for="kategori_1">@item.CategoryName</label>
+                                <div class="link">/administrator/newCategory/delete/@item.CategoryId</div>
+                            </li>
+                        }
+                    </ul>       
+                </div>
+                <button>EKLE</button>
+            </div>
+        }
+        <div class="popup"></div>
+    </div>
+</section>

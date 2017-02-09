@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Admin - Medya Ekle";
+    Layout = "~/Areas/Administrator/Views/AdministratorLayout.cshtml";
+}
+
+<section class="content">
+    <div class="contentici">
+        @using (Html.BeginForm("Add", "NewMedia",FormMethod.Post, new { enctype = "multipart/form-data", @class = "ac-checkbox ac-checkmark yazi_form" }))
+        {
+            <div class="resimekle">
+                <div class="resimekleic">
+                    <label for="files">
+                        <img src="/Areas/Administrator/Images/resimekle.jpg" alt="resimekle">
+                    </label>
+                    <input type="file" id="files" name="files" class="articleFile" accept="image/*" multiple="multiple" style="display:none;" />
+
+                    <output id="result" />
+                </div>
+            </div>
+            <div class="sidebar">           
+                <button class="ajax_form_button">YÜKLE</button>
+                <input type="reset" value="TEMİZLE">
+                <div id="divError" style="display:none"><img src=/Areas/Administrator/Images/ajax-loader.gif class="loaderGif" /></div>
+            </div>
+        }
+        <div class="popup"></div>
+    </div>
+
+    <script type="text/javascript" src="~/Content/Js/galeri_ekle.js"></script>
+</section>

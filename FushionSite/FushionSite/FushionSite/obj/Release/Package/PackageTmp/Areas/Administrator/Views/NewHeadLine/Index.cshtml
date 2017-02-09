@@ -1,0 +1,75 @@
+﻿@model KagiEntityLibrary.HeadLineEntity.HeadLineTable
+@{
+    ViewBag.Title = "Admin - Manşet Ekle";
+    Layout = "~/Areas/Administrator/Views/AdministratorLayout.cshtml";
+}
+
+<section class="content">
+    <div class="contentici">
+        @using (Html.BeginForm("Add", "NewHeadLine", FormMethod.Post, new { enctype = "multipart/form-data", @class = "ac-checkbox ac-checkmark yazi_form" }))
+        {
+            <div class="yazibaslik">
+                @Html.TextBoxFor(mt => mt.HeadLineTitle, new { placeholder = "Manşet Başlığı" })
+            </div>
+            <div class="yazieditor">
+                <div class="yazieditoric">
+                    @Html.TextArea("HeadLineContent", "", new { @class = "yazi", name = "yazi", placeholder = "İçerik", id = "editor1" })
+                    <script type="text/javascript">
+                        var editor = CKEDITOR.instances['editor1']
+                        if (editor) { editor.destroy(true); }
+                        CKEDITOR.replace('editor1', {
+                            enterMode: CKEDITOR.ENTER_BR,
+                        })
+
+                    </script>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="onecikan">
+                    <div class="resimekle">
+                        <div class="resimekleic">
+                            <label for="files">
+                                <img src="/Areas/Administrator/Images/resimekle.jpg" alt="resimekle">
+                            </label>
+                            <input type="file" id="files" name="files" class="articleFile" accept="image/*" style="display:none;" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebaric">
+                    <div class="sidebarbaslik">DİLLER</div>
+                    <ul class="ac-custom">
+                        <li>
+
+                            @Html.RadioButton("language", "İngilizce", false, new { name = "category", id = "kategori_1" })
+                            <label for="kategori_1">İngilizce</label>
+                        </li>
+                        <li>
+
+                            @Html.RadioButton("language", "Türkçe", false, new { name = "category", id = "kategori_1" })
+                            <label for="kategori_1">Türkçe</label>
+                        </li>
+
+                    </ul>
+                    <div class="sidebarbaslik">KATEGORİLER</div>
+                    <ul class="ac-custom kategorilerssss">
+                        @foreach (var item in (IEnumerable<KagiEntityLibrary.CategoryEntity.CategoriesTable>) ViewBag.SendCategories)
+                        {
+                            <li>
+                                @Html.RadioButton("category", item.CategoryName, false, new {name = "category", id = "kategori_1"})
+
+                                <label for="kategori_1">@item.CategoryName</label>
+                                <div class="link">/administrator/newCategory/delete/@item.CategoryId</div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+           
+             
+                <button class="ajax_form_button">YAYINLA</button>
+            </div>
+        }
+        <div class="popup"></div>
+        <script src="~/Content/Js/onecikan_ekle.js"></script>
+    </div>
+</section>

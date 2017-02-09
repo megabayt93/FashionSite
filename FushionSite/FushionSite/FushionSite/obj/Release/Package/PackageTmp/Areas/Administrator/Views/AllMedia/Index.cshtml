@@ -1,0 +1,50 @@
+﻿@model KagiEntityLibrary.MediaEntity.MediasTable
+@using PagedList;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Admin - Tüm Medyalar";
+    Layout = "~/Areas/Administrator/Views/AdministratorLayout.cshtml";
+}
+<section class="content">
+    <div class="contentici">
+        <div class="tum">
+            <div class="galeri">
+                <div class="galerirow">
+
+                    @foreach (var item in (IEnumerable<KagiEntityLibrary.MediaEntity.MediasTable>)ViewBag.SendMedias)
+                    {
+                        <div class="resim" data-yusuf="Medya">
+                            <div>
+                                <span class="galeriresim">
+                                    <img src="~/Content/Images/Media/@item.MediaUrl" alt="">
+                                </span>
+                                <span class="kategorisi">
+                                    Medya
+                                </span>
+                                <span class="duzenle">
+                                    <a href="/administrator/allmedia/delete/@item.MediaId">
+                                        <img src="/Areas/Administrator/Images/sil.png" alt="">
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="pagedList">
+                @Html.PagedListPager((IPagedList<KagiEntityLibrary.MediaEntity.MediasTable>)ViewBag.SendMedias, page => Url.Action("index", "allmedia", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+            </div>
+        </div>
+    </div>
+
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    
+    @using (Html.BeginForm())
+    {
+        string page = Session["page"].ToString();
+        string route = "/administrator/allmedia?page=" + page;
+        Session["uri"] = route;
+
+    }
+</section>

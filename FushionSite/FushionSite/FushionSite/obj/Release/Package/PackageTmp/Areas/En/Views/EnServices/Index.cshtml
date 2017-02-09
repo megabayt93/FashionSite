@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Services";
+    Layout = "~/Areas/En/Views/FrontLayout.cshtml";
+}
+<script>
+    window.onload = function () {
+        $("#servicesLi").addClass("active");
+        $("#homeLi").removeClass("active");
+    }
+</script>
+<section class="page">
+
+
+    <div class="page-bg"></div>
+    <div class="container">
+        <div class="page-info">
+            <div class="page-title">
+                Services
+            </div>
+            <div class="divider-half"></div>
+            <div class="alt-sayfa">
+                <ul>
+                    <li><a href=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="single">
+            <p>
+                @try
+                {
+                    @Html.Raw(Model.ArticleContent)
+                }
+                catch (Exception)
+                {
+
+                    <b>İçerik Yok!</b>
+                }
+            </p>
+        </div>
+    </div>
+
+
+
+</section>
+

@@ -1,0 +1,13 @@
+F:\NarbimProjects\KagiFashion\KagiFashion\KagiEntityLibrary\bin\Debug\KagiEntityLibrary.dll.config
+F:\NarbimProjects\KagiFashion\KagiFashion\KagiEntityLibrary\bin\Debug\KagiEntityLibrary.dll
+F:\NarbimProjects\KagiFashion\KagiFashion\KagiEntityLibrary\bin\Debug\KagiEntityLibrary.pdb
+F:\NarbimProjects\KagiFashion\KagiFashion\KagiEntityLibrary\bin\Debug\EntityFramework.dll
+F:\NarbimProjects\KagiFashion\KagiFashion\KagiEntityLibrary\bin\Debug\EntityFramework.SqlServer.dll
+F:\NarbimProjects\KagiFashion\KagiFashion\KagiEntityLibrary\bin\Debug\EntityFramework.xml
+F:\NarbimProjects\KagiFashion\KagiFashion\KagiEntityLibrary\bin\Debug\EntityFramework.SqlServer.xml
+F:\NarbimProjects\KagiFashion\KagiFashion\KagiEntityLibrary\obj\Debug\KagiEntityLibrary.dll
+F:\NarbimProjects\KagiFashion\KagiFashion\KagiEntityLibrary\obj\Debug\KagiEntityLibrary.pdb
+F:\NarbimProjects\KagiFashion\KagiFashion\KagiEntityLibrary\obj\Debug\KagiEntityLibrary.Migrations.AddDB.resources
+F:\NarbimProjects\KagiFashion\KagiFashion\KagiEntityLibrary\obj\Debug\KagiEntityLibrary.csproj.GenerateResource.Cache
+F:\NarbimProjects\KagiFashion\KagiFashion\KagiEntityLibrary\obj\Debug\KagiEntityLibrary.Migrations.UpdateArticle.resources
+F:\NarbimProjects\KagiFashion\KagiFashion\KagiEntityLibrary\obj\Debug\KagiEntityLibrary.csprojResolveAssemblyReference.cache

@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <meta name="description" content=".Net MVC Open Source Kurumsal Proje" />
+    <meta name="keywords" content="Kurumsal,web,projesi,etiket,alanı" />
+    <meta name="author" content="Fatih YAZICI" />
+    <link rel="stylesheet" href="/Content/Front/css/reset.css">
+    <link rel="stylesheet" href="/Content/Front/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Content/Front/css/slider.css">
+
+    <script src="~/Content/Front/js/jquery.min.js"></script>
+    <script src="~/Content/Front/js/jquery.unobtrusive-ajax.min.js"></script>
+
+
+    <script src="~/Content/Front/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Content/Front/js/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="/Content/Front/style.css">
+    <link rel="stylesheet" href="/Content/Front/css/jquery.fancybox.css">
+  
+    <script>window.jQuery || document.write('<script src="/Content/Front/js/jquery.min.js"><\/script>')</script>
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="/Content/Front/js/modernizr.custom.28468.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href=""><img src="/Content/Front/img/logo.png" alt=""></a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li id="homeLi" class="active">
+                        <a href="/anasayfa">Anasayfa</a>
+                    </li>
+                    <li id="institutionalLi">
+                        <a href="kurumsal">Kurumsal</a>
+                    </li>
+                    <li id="productLi">
+                        <a href="/urunler">ürünlerİmiz</a>
+                    </li>
+                    <li id="galleryLi">
+                        <a href="/galeri">Galeri</a>
+                    </li>
+                    <li id="humanLi">
+                        <a href="/insan-kaynaklari">İnsan Kaynakları</a>
+                    </li>
+                    <li id="contactLi">
+                        <a href="/iletisim">İletİşİm</a>
+                    </li>
+                    <li id="en">
+                        <a title="English" href="/en">EN</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="borderof"></div>
+            <div class="toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+<div>
+    @RenderBody()
+</div>
+    <footer>
+
+
+        <div class="footerust">
+            <div class="container">
+                <div class="footernav">
+                    <ul>
+                        <li id="homeLi" class="active">
+                            <a href="/anasayfa">Anasayfa</a>
+                        </li>
+                        <li id="institutionalLi">
+                            <a href="/kurumsal">Kurumsal</a>
+                        </li>
+                        <li id="servicesLi">
+                            <a href="/hizmetler">Hizmetler</a>
+                        </li>
+                        <li id="referancesLi">
+                            <a href="/referanslar">Referanslar</a>
+                        </li>
+                        <li id="contactLi">
+                            <a href="/iletisim">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footeralt">
+            <div class="container">
+                <div class="copy">Bu sitedeki tüm içerikler Corporate’ e aittir. © 2017</div>
+                <div class="narbim">
+                    <a href="www.facebook.com/o.bir.coder" target="_blank" style="color:#fff8dc">
+                        FATİH YAZICI
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+    
+    <script type="text/javascript" src="/Content/Front/js/smoothscroll.js"></script>
+    <script type="text/javascript" src="/Content/Front/js/main.js"></script>
+    <script type="text/javascript" src="/Content/Front/js/jquery.cslider.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $('#da-slider').cslider({
+                autoplay: true,
+                interval: 10000,
+
+            });
+
+        });
+    </script>
+    <script type="text/javascript" src="/Content/Front/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".fancybox").fancybox();
+        });
+    </script>
+</body>
+</html>

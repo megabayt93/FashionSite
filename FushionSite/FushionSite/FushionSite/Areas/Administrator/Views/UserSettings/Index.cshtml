@@ -1,0 +1,24 @@
+﻿@model FashionSiteEntityLibrary.AdminInformationEntity.AdminInformationTable
+@{
+    ViewBag.Title = "Admin - Ayarlar";
+    Layout = "~/Areas/Administrator/Views/AdministratorLayout.cshtml";
+}
+
+<section class="content">
+    <div class="contentici">
+        @using (Ajax.BeginForm("Update", "UserSettings", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divInformation" }, new { @class = "ac-checkbox ac-checkmark yazi_form" }))
+        {
+            <div class="yazibaslik">
+                @Html.TextBoxFor(an => an.AdminName, new { name = "adminName", placeholder = "Kullanıcı Adı" })
+            </div>
+            <div class="yazibaslik">
+                <input type="password" name="oldPassword" placeholder="Eski Parola">
+            </div>
+            <div class="yazibaslik">
+                <input type="password" name="newPassword" placeholder="Yeni Parola">
+            </div>
+            <button>Kaydet</button><br />
+            <center><div id="divInformation" style="height:10px; width:auto;"></div></center>
+        }
+    </div>
+</section>

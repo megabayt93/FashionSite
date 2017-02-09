@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "KAGİ MODA";
+    Layout = "~/Areas/En/Views/FrontLayout.cshtml";
+}
+
+<div id="da-slider" class="da-slider">
+    @foreach (var item in (IEnumerable<KagiEntityLibrary.HeadLineEntity.HeadLineTable>)ViewData["sendSlider"])
+    {
+        <div class="da-slide">
+            <h2>KAGİMODA</h2>
+            <p>
+                <span>@Html.Raw(item.HeadLineContent)</span>
+            </p>
+            <div class="da-img">
+                <img src="/Content/Images/HeadLine/@item.HeadLineImageUrl" alt="@item.HeadLineTitle" />
+            </div>
+        </div>
+    }
+    <nav class="da-arrows">
+        <span class="da-arrows-prev"></span>
+        <span class="da-arrows-next"></span>
+    </nav>
+</div>
+
+<section class="urunler">
+    <div class="container">
+        <div class="title">PRODUCTS</div>
+        <div class="divider"></div>
+        <div class="subtitle">WHAT PRODUCE</div>
+        <div class="row">
+            <div class="uruns">
+                @foreach (var item in (IEnumerable<KagiEntityLibrary.GalleryEntiy.GalleryTable>)ViewData["sendProduct"])
+                {
+                    <div class="urun">
+                        <a href="/Content/Images/Gallery/@item.ImageUrl" class="fancybox" data-fancybox-group="urun">
+                            <img src="/Content/Images/Gallery/@item.ImageUrl" style="height:100% " alt="@item.Title">
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="all-more">
+            <a href="/en/products">SHOW ALL</a>
+        </div>
+    </div>
+</section>

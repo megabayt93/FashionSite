@@ -1,0 +1,70 @@
+﻿@model FashionSiteEntityLibrary.ArticlesEntity.ArticlesTable
+@{
+    ViewBag.Title = "Admin - Yeni Yazı Ekle";
+    Layout = "~/Areas/Administrator/Views/AdministratorLayout.cshtml";
+}
+<section class="content">
+    <div class="contentici">
+        @using (Ajax.BeginForm("Add", "NewArticles", new AjaxOptions { UpdateTargetId = "divError", HttpMethod = "POST" }, new { @class = "ac-checkbox ac-checkmark yazi_form" }))
+        {
+            <div class="yazibaslik">
+                @Html.TextBoxFor(at => at.ArticleTitle, new { placeholder = "Yazı Başlığı" })
+            </div>
+            <div class="yazieditor">
+                <div class="yazieditoric">
+                    @Html.TextArea("ArticleContent", "", new { @class = "yazi", name = "yazi", placeholder = "İçerik", id = "editor1" })
+                    <script type="text/javascript">
+                        var editor = CKEDITOR.instances['editor1']
+                        if (editor) { editor.destroy(true); }
+                        CKEDITOR.replace('editor1', {
+                            enterMode: CKEDITOR.ENTER_BR,
+                        })
+
+                    </script>
+                </div>
+
+            </div>
+            <div class="sidebar">
+                <div class="sidebaric">
+                    <div class="sidebarbaslik">DİLLER</div>
+                    <ul class="ac-custom">
+                        <li>
+
+                            @Html.RadioButton("language", "İngilizce", false, new { name = "category", id = "kategori_1" })
+                            <label for="kategori_1">İngilizce</label>
+                        </li>
+                        <li>
+
+                            @Html.RadioButton("language", "Türkçe", false, new { name = "category", id = "kategori_1" })
+                            <label for="kategori_1">Türkçe</label>
+                        </li>
+
+                    </ul>
+
+                    <div class="sidebarbaslik">KATEGORİLER</div>
+                    <ul class="ac-custom kategorilerssss">
+                        @foreach (var item in (IEnumerable<FashionSiteEntityLibrary.CategoryEntity.CategoriesTable>)ViewBag.SendCategories)
+                        {
+                            <li>
+                                @Html.RadioButton("category", item.CategoryName, false, new { name = "category", id = "kategori_1" })
+
+                                <label for="kategori_1">@item.CategoryName</label>
+                                <div class="link">/administrator/newCategory/delete/@item.CategoryId</div>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+                <div id="divError"></div>
+                <button>Yayınla</button>
+            </div>
+
+
+
+
+
+        }
+        <div class="popup"></div>
+    </div>
+
+</section>

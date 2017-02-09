@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Referanslar";
+    Layout = "~/Views/FrontLayout.cshtml";
+}
+<script>
+    window.onload = function () {
+        $("#referancesLi").addClass("active");
+        $("#homeLi").removeClass("active");
+    }
+</script>
+<section class="page">
+
+
+
+    <div class="container">
+        <div class="single">
+            <p>
+                @try
+                {
+                    @Html.Raw(Model.ArticleContent)
+                }
+                catch (Exception)
+                {
+
+                    <b>İçerik Yok!</b>
+                }
+               
+            </p>
+        </div>
+    </div>
+
+
+
+</section>
+

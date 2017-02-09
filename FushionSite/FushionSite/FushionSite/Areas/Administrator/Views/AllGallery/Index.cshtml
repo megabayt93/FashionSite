@@ -1,0 +1,66 @@
+﻿@model FashionSiteEntityLibrary.GalleryEntiy.GalleryTable
+@using PagedList;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administrator/Views/AdministratorLayout.cshtml";
+}
+<section class="content">
+    <div class="contentici">
+        <div class="tum">
+            <div class="galerisec">
+                <span class="sec">Kategori Seçin:</span>
+                <div class="kategorisec">
+                    <div class="kategori_ismi">
+                        Tüm Galeriler
+                    </div>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+            </div>
+            <div class="kategoriler">
+                <div class="sabit">Tümü Göster</div>
+                @foreach (var item in (IEnumerable<FashionSiteEntityLibrary.CategoryEntity.CategoriesTable>)ViewBag.SendCategories)
+                {
+                    <div>@item.CategoryName</div>
+                }
+            </div>
+            <div class="galeri">
+                <div class="galerirow">
+
+                    @foreach (var item in (IEnumerable<FashionSiteEntityLibrary.GalleryEntiy.GalleryTable>)ViewBag.SendGalleries)
+                    {
+                        <div class="resim" data-yusuf="@item.Category">
+                            <div>
+                                <span class="galeriresim">
+                                    <img src="~/Content/Images/Gallery/@item.ImageUrl" alt="">
+                                </span>
+                                <span class="kategorisi">
+                                    @item.Category
+                                </span>
+                                <span class="duzenle">
+                                    <a href="/administrator/allgallery/delete/@item.GalleryId">
+                                        <img src="/Areas/Administrator/Images/sil.png" alt="">
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="pagedList">
+                @Html.PagedListPager((IPagedList<FashionSiteEntityLibrary.GalleryEntiy.GalleryTable>)ViewBag.SendGalleries, page => Url.Action("index", "allgallery", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+            </div>
+        </div>
+    </div>
+
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+
+    @using (Html.BeginForm())
+    {
+        string page = Session["page"].ToString();
+        string route = "/administrator/allgallery?page=" + page;
+        Session["uri"] = route;
+
+    }
+</section>

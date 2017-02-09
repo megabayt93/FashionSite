@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Vision";
+    Layout = "~/Areas/En/Views/FrontLayout.cshtml";
+}
+<script>
+    window.onload = function () {
+        $("#visionLi").addClass("active");
+        $("#homeLi").removeClass("active");
+        $("#institutionalLi").addClass("active");
+    }
+</script>
+<section class="page">
+
+
+    <div class="page-bg"></div>
+    <div class="container">
+        <div class="page-info">
+            <div class="page-title">
+                Institutional
+            </div>
+            <div class="divider-half"></div>
+            <div class="alt-sayfa">
+                <ul>
+                    <li id="aboutLi"><a href="/en/institutional">Institutional</a></li>
+                    <li id="visionLi" class="active"><a href="/en/vision">Vision</a></li>
+                    <li id="missionLi"><a href="/en/mission">Mission</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="single">
+            <p>
+                @try
+                {
+                    @Html.Raw(Model.ArticleContent)
+                }
+                catch (Exception)
+                {
+
+                    <b>No Content!</b>
+                }
+            </p>
+        </div>
+    </div>
+
+
+
+</section>
+

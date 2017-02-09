@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Misyon";
+    Layout = "~/Views/FrontLayout.cshtml";
+}
+<script>
+    window.onload = function () {
+        $("#missionLi").addClass("active");
+        $("#homeLi").removeClass("active");
+        $("#institutionalLi").addClass("active");
+    }
+</script>
+<section class="page">
+
+
+    <div class="page-bg"></div>
+    <div class="container">
+        <div class="page-info">
+            <div class="page-title">
+                Kurumsal
+            </div>
+            <div class="divider-half"></div>
+            <div class="alt-sayfa">
+                <ul>
+                    <li id="aboutLi"><a href="/kurumsal">Hakkımızda</a></li>
+                    <li id="visionLi"><a href="/vizyon">Vizyonumuz</a></li>
+                    <li id="missionLi" class="active"><a href="/misyon">Misyonumuz</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="single">
+            <p>
+                @try
+                {
+                    @Html.Raw(Model.ArticleContent)
+                }
+                catch (Exception)
+                {
+
+                    <b>İçerik Yok!</b>
+                }
+            </p>
+        </div>
+    </div>
+
+
+
+</section>
+

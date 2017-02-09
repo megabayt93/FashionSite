@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FashionSite", "FushionSite\FashionSite.csproj", "{4AD0118C-317A-4388-BC19-A9EC2FBE84BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FashionSiteEntityLibrary", "FushionSiteEntityLibrary\FashionSiteEntityLibrary.csproj", "{4B0C6355-DA0E-4428-80F6-5FE28D14E526}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seo", "Seo\Seo.csproj", "{571A1E8F-DE17-4253-92A0-B299865DA6A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AD0118C-317A-4388-BC19-A9EC2FBE84BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AD0118C-317A-4388-BC19-A9EC2FBE84BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AD0118C-317A-4388-BC19-A9EC2FBE84BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AD0118C-317A-4388-BC19-A9EC2FBE84BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B0C6355-DA0E-4428-80F6-5FE28D14E526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B0C6355-DA0E-4428-80F6-5FE28D14E526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B0C6355-DA0E-4428-80F6-5FE28D14E526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B0C6355-DA0E-4428-80F6-5FE28D14E526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{571A1E8F-DE17-4253-92A0-B299865DA6A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{571A1E8F-DE17-4253-92A0-B299865DA6A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{571A1E8F-DE17-4253-92A0-B299865DA6A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{571A1E8F-DE17-4253-92A0-B299865DA6A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

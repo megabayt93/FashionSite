@@ -1,0 +1,32 @@
+﻿@model FashionSiteEntityLibrary.ContactEntity.ContactsTable
+@{
+    ViewBag.Title = "Admin - İletişim Bilgileri";
+    Layout = "~/Areas/Administrator/Views/AdministratorLayout.cshtml";
+}
+<section class="content">
+    <div class="contentici">
+        @using (Ajax.BeginForm("updateContact", "contact", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divInformation" }, new { @class = "ac-checkbox ac-checkmark yazi_form" }))
+        {
+            <div class="yazieditor">
+                <div class="yazieditoric">
+                    <text style="color:#49c293">İletişim Bilgilerini Editör İçerisine Yazınız.</text><br />
+                    @Html.TextAreaFor(cc => cc.ContactContent, new { @class = "yazi", name = "yazi", placeholder = "İçerik", id = "editor1" })
+                    <script type="text/javascript">
+                        var editor = CKEDITOR.instances['editor1']
+                        if (editor) { editor.destroy(true); }
+                        CKEDITOR.replace('editor1', {
+                            enterMode: CKEDITOR.ENTER_BR,
+                        })
+
+                    </script>
+                </div>
+
+            </div>
+           
+            <div id="divInformation" style="clear:both;width:250px;"></div>
+            <button style="clear: both;width: 740px;float: left;height: 60px;background: #49c293;border: none;margin-top: 20px;color: #fff;font-family: 'MB';font-size: 15px;">KAYDET</button>
+            Html.HiddenFor(aId => aId.ContactId);
+
+        }
+    </div>
+</section>

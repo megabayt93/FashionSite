@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Admin - Tüm Manşetler";
+    Layout = "~/Areas/Administrator/Views/AdministratorLayout.cshtml";
+}
+<section class="content">
+    <div class="contentici">
+        <div class="tum">
+            @foreach (var item in (IEnumerable<KagiEntityLibrary.HeadLineEntity.HeadLineTable>)ViewBag.SendHeadLines)
+            {
+                <div class="yazi">
+                    <div class="tum_yazibasligi">
+                        <a href="">
+                            @item.HeadLineTitle
+                        </a>
+
+                    </div>
+                    <div class="tum_duzen">
+                        <span class="kategorisi">@item.HeadLineCategory</span>
+                        <span>
+                            @{
+                                string content;
+                                try
+                                {
+                                    content = System.Text.RegularExpressions.Regex.Replace(item.HeadLineContent, @"<(.|\n)*?>", string.Empty); 
+                                }
+                                catch (Exception)
+                                {
+
+                                    content = "İçerik Yok";
+                                }
+                              
+}
+                            @try
+                            {
+                              <text>@Html.Raw(content.Substring(0,30));</text>
+                            }
+                            catch (Exception)
+                            {
+                                <text>@Html.Raw(content)</text>
+                            }
+                        </span>
+                        <span>
+                            <a href="/administrator/allheadline/updateindex/@item.HeadLineId">
+                                <img src="/Areas/Administrator/Images/duzenle.png" alt="">
+                            </a>
+                        </span>
+                        <span>
+                            <a href="/administrator/allheadline/delete/@item.HeadLineId">
+                                <img src="/Areas/Administrator/Images/sil.png" alt="">
+                            </a>
+                        </span>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+</section>

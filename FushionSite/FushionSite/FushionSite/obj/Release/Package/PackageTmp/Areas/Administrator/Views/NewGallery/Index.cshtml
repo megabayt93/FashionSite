@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Admin - Yeni Galeri Ekle";
+    Layout = "~/Areas/Administrator/Views/AdministratorLayout.cshtml";
+}
+<section class="content">
+    <div class="contentici">
+        @using (Html.BeginForm("Add", "NewGallery", FormMethod.Post, new { enctype = "multipart/form-data", @class = "ac-checkbox ac-checkmark yazi_form" }))
+        {
+            <div class="yazibaslik">
+                @Html.TextBox("Title","", new { placeholder = "Galeri Başlığı" })
+            </div>
+            <div class="yazieditor">
+                <div class="yazieditoric">
+                    @Html.TextArea("Content", "", new {@class = "yazi", name = "yazi", placeholder = "İçerik", id = "editor1"})
+                    <script type="text/javascript">
+                        var editor = CKEDITOR.instances['editor1']
+                        if (editor) {
+                            editor.destroy(true);
+                        }
+                        CKEDITOR.replace('editor1', {
+                            enterMode: CKEDITOR.ENTER_BR,
+                        })
+
+                    </script>
+                </div>
+            </div>
+    <div class="sidebar">
+        <div class="sidebaric">
+            <div class="sidebarbaslik">KATEGORİLER</div>
+            <ul class="ac-custom kategorilerssss">
+                @foreach (var item in (IEnumerable<KagiEntityLibrary.CategoryEntity.CategoriesTable>)ViewBag.SendCategories)
+                {
+                    <li>
+                        @Html.RadioButton("category", item.CategoryName, false, new { name = "category", id = "kategori_1" })
+
+                        <label for="kategori_1">@item.CategoryName</label>
+                        <div class="link">/administrator/newCategory/delete/@item.CategoryId</div>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <button class="ajax_form_button">YÜKLE</button>
+        <input type="reset" value="TEMİZLE">
+        <div id="divError" style="display:none"><img src=/Areas/Administrator/Images/ajax-loader.gif class="loaderGif" /></div>
+    </div>
+            <div class="resimekle">
+                <div class="resimekleic">
+                    <label for="files">
+                        <img src="/Areas/Administrator/Images/resimekle.jpg" alt="resimekle">
+                    </label>
+                    <input type="file" id="files" name="files" class="articleFile" accept="image/*" multiple="multiple" style="display:none;" />                               
+                    <output id="result" />
+                </div>
+            </div>
+           
+        }
+    </div>
+    <script type="text/javascript" src="~/Content/Js/galeri_ekle.js"></script>
+</section>

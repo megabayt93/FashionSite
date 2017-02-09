@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Admin - Tüm Yazılar";
+    Layout = "~/Areas/Administrator/Views/AdministratorLayout.cshtml";
+}
+
+<section class="content">
+    <div class="contentici">
+        <div class="tum">
+            @foreach (var item in (IEnumerable<KagiEntityLibrary.ArticlesEntity.ArticlesTable>)ViewBag.SendArticles)
+            {
+                <div class="yazi">
+                    <div class="tum_yazibasligi">
+                        <a href="">
+                            @item.ArticleTitle
+                        </a>
+                    </div>
+                    <div class="tum_duzen">
+                        <span class="kategorisi">
+                            @item.ArticleCategory
+                        </span>
+                       
+                    <span>
+                        <a href="/administrator/allarticles/updateindex/@item.ArticleId">
+                            <img src="/Areas/Administrator/Images/duzenle.png" alt="">
+                        </a>
+                    </span>
+                    <span>
+                        <a href="/administrator/allarticles/delete/@item.ArticleId">
+                            <img src="/Areas/Administrator/Images/sil.png" alt="">
+                        </a>
+                    </span>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <meta name="description" content="1998 yılında Kahramanmaraş merkezde kurulmuş olan firmamız her geçen gün kendini yenileyerek sektördeki yerini almıştır. " />
+    <meta name="keywords" content="Kagi Moda,Kahramanmaraş Kagi Moda,Golf Tailor,Golf Tailor Gömlek,Golf Tailor Kahramanmaraş,Kagi Gömlek,Kagi Moda İletişim, Kahramanmaraş Gömlek Giyim,Kahramanmaraş Tekstil" />
+    <meta name="author" content="Kagi Moda" />
+    <link rel="stylesheet" href="/Content/Front/css/reset.css">
+    <link rel="stylesheet" href="/Content/Front/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Content/Front/css/slider.css">
+
+    <script src="/Content/Front/js/jquery.min.js"></script>
+    <script src="/Content/Front/js/jquery.unobtrusive-ajax.min.js"></script>
+
+
+    <script src="/Content/Front/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="/Content/Front/js/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="/Content/Front/style.css">
+    <link rel="stylesheet" href="/Content/Front/css/jquery.fancybox.css">
+    
+    <script>window.jQuery || document.write('<script src="/Content/Front/js/jquery.min.js"><\/script>')</script>
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="/Content/Front/js/modernizr.custom.28468.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href=""><img src="/Content/Front/img/logo.png" alt=""></a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li id="homeLi" class="active">
+                        <a href="/en/home">HOME</a>
+                    </li>
+                    <li id="institutionalLi">
+                        <a href="/en/institutional">INSTITUTIONAL</a>
+                    </li>
+                    <li id="productLi">
+                        <a href="/en/products">PRODUCTS</a>
+                    </li>
+                    <li id="galleryLi">
+                        <a href="/en/gallery">GALLERY</a>
+                    </li>
+                    <li id="humanLi">
+                        <a href="/en/human-resources">HUMAN RESOURCES</a>
+                    </li>
+                    <li id="contactLi">
+                        <a href="/en/contacts">CONTACT US</a>
+                    </li>
+                    <li id="tr">
+                        <a title="Türkçe" href="/anasayfa">TR</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="borderof"></div>
+            <div class="toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+<div>
+    @RenderBody()
+</div>
+    <footer>
+
+
+        <div class="footerust">
+            <div class="container">
+                <div class="footernav">
+                    <ul>
+                        <li id="homeLi" class="active">
+                            <a href="/en/home">HOME</a>
+                        </li>
+                        <li id="institutionalLi">
+                            <a href="/en/institutional">INSTUTIONAL</a>
+                        </li>
+                        <li id="servicesLi">
+                            <a href="/en/services">SERVICES</a>
+                        </li>
+                        <li id="referancesLi">
+                            <a href="/en/referances">REFERANCES</a>
+                        </li>
+                        <li id="contactLi">
+                            <a href="/en/contacts">CONTACT US</a>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footeralt">
+            <div class="container">
+                <div class="copy">Bu sitedeki tüm içerikler KagiModa’ya aittir. © 2015</div>
+                <div class="narbim">
+                    <a href="">
+                        <img src="/Content/Front/img/narbim_logo.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+    
+    <script type="text/javascript" src="/Content/Front/js/smoothscroll.js"></script>
+    <script type="text/javascript" src="/Content/Front/js/main.js"></script>
+    <script type="text/javascript" src="/Content/Front/js/jquery.cslider.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $('#da-slider').cslider({
+                autoplay: true,
+                time: 5000,
+
+            });
+
+        });
+    </script>
+    <script type="text/javascript" src="/Content/Front/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".fancybox").fancybox();
+        });
+    </script>
+</body>
+</html>

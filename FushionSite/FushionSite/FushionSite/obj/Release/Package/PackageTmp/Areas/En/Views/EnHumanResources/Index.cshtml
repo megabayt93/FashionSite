@@ -1,0 +1,328 @@
+﻿@{
+    ViewBag.Title = "Human Resources";
+    Layout = "~/Areas/En/Views/FrontLayout.cshtml";
+}
+
+<script>
+    window.onload = function() {
+        $("#humanLi").addClass("active");
+        $("#homeLi").removeClass("active");
+    }
+</script>
+<section class="page">
+    <div class="page-bg"></div>
+    <div class="container">
+        <div class="page-info">
+            <div class="page-title">
+                Human Resources
+            </div>
+            <div class="divider-half"></div>
+            <div class="alt-sayfa">
+                <ul>
+                    <li><a href=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="arkaplan"></div>
+        <div class="container">
+            <div class="content">
+                <div class="content_ic">
+
+                    @using (Ajax.BeginForm("SendHumanResources", "HumanResources", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "Successfull" }, new { @class = "insankaynaklari" }))
+                    {
+
+
+
+                        <div class="bolumbasligi">Kişisel Bilgiler</div>
+                        <div class="bolum1 bolum">
+
+                            <div denet="zorunlu">
+                                <label for="adsoyad">Ad Soyad</label>
+                                <span>:</span>
+                                <input type="text" id="adsoyad" name="adsoyad" required>
+                            </div>
+                            <div denet="degil">
+                                <label for="tcnumarasi">Tc Kimlik No</label>
+                                <span>:</span>
+                                <input type="text" id="tcnumarasi" name="tcnumarasi">
+                            </div>
+                            <div denet="zorunlu">
+                                <label for="cins">Cinsiyet</label>
+                                <span>:</span>
+                                <select name="cins" id="cins">
+                                    <option>Seçiniz</option>
+                                    <option>Bay</option>
+                                    <option>Bayan</option>
+                                </select>
+                            </div>
+                            <div denet="zorunlu">
+                                <label for="dogumyeri">Doğum Yeri</label>
+                                <span>:</span>
+                                <input type="text" id="dogumyeri" name="dogumyeri" required>
+                            </div>
+                            <div denet="zorunlu">
+                                <label for="dogumtarihi">Doğum Tarihi</label>
+                                <span>:</span>
+                                <select name="dogumtarihi_gun" id="dogumtarihi">
+                                    <option>Gün</option>
+                                    @for (int i = 1; i <= 31; i++)
+                                    {
+                                        <option value="@i">@i</option>
+                                    }
+                                </select>
+                                <span>-</span>
+                                <select name="dogumtarihi_ay" id="dogumtarihi">
+                                    <option>Ay</option>
+                                    @for (int i = 1; i <= 12; i++)
+                                    {
+                                        <option value="@i">@i</option>
+                                    }
+                                </select>
+                                <span>-</span>
+                                <select name="dogumtarihi_yil" id="dogumtarihi">
+                                    <option>Yıl</option>
+                                    @for (int i = 1950; i <= 1997; i++)
+                                    {
+                                        <option value="@i">@i</option>
+                                    }
+                                </select>
+                            </div>
+                            <div denet="zorunlu">
+                                <label for="uyruk">Uyruk</label>
+                                <span>:</span>
+                                <input type="text" id="uyruk" name="uyruk" required>
+                            </div>
+                            <div denet="zorunlu">
+                                <label for="medenihali">Medeni Hali</label>
+                                <span>:</span>
+                                <select name="medenihali" id="medenihali">
+                                    <option>Seçiniz</option>
+                                    <option>Evli</option>
+                                    <option>Bekar</option>
+                                    <option>Boşanmış</option>
+                                </select>
+                            </div>
+                            <div denet="zorunlu">
+                                <label for="telefon">Cep Telefonu</label>
+                                <span>:</span>
+                                <input type="text" id="telefon" name="telefon" required>
+                            </div>
+                            <div denet="zorunlu">
+                                <label for="email">Email Adresi</label>
+                                <span>:</span>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div denet="zorunlu">
+                                <label for="sehir">Şehir</label>
+                                <span>:</span>
+                                <select name="sehir" id="sehir">
+                                    <option>Seçiniz</option>
+                                    <option value="1">Adana</option>
+                                    <option value="2">Adıyaman</option>
+                                    <option value="3">Afyonkarahisar</option>
+                                    <option value="4">Ağrı</option>
+                                    <option value="68">Aksaray</option>
+                                    <option value="5">Amasya</option>
+                                    <option value="6">Ankara</option>
+                                    <option value="7">Antalya</option>
+                                    <option value="75">Ardahan</option>
+                                    <option value="8">Artvin</option>
+                                    <option value="9">Aydın</option>
+                                    <option value="10">Balıkesir</option>
+                                    <option value="74">Bartın</option>
+                                    <option value="72">Batman</option>
+                                    <option value="69">Bayburt</option>
+                                    <option value="11">Bilecik</option>
+                                    <option value="12">Bingöl</option>
+                                    <option value="13">Bitlis</option>
+                                    <option value="14">Bolu</option>
+                                    <option value="15">Burdur</option>
+                                    <option value="16">Bursa</option>
+                                    <option value="17">Çanakkale</option>
+                                    <option value="18">Çankırı</option>
+                                    <option value="19">Çorum</option>
+                                    <option value="20">Denizli</option>
+                                    <option value="21">Diyarbakır</option>
+                                    <option value="81">Düzce</option>
+                                    <option value="22">Edirne</option>
+                                    <option value="23">Elazığ</option>
+                                    <option value="24">Erzincan</option>
+                                    <option value="25">Erzurum</option>
+                                    <option value="26">Eskişehir</option>
+                                    <option value="27">Gaziantep</option>
+                                    <option value="28">Giresun</option>
+                                    <option value="29">Gümüşhane</option>
+                                    <option value="30">Hakkari</option>
+                                    <option value="31">Hatay</option>
+                                    <option value="76">Iğdır</option>
+                                    <option value="32">Isparta</option>
+                                    <option value="34">İstanbul</option>
+                                    <option value="35">İzmir</option>
+                                    <option value="46">Kahramanmaraş</option>
+                                    <option value="78">Karabük</option>
+                                    <option value="70">Karaman</option>
+                                    <option value="36">Kars</option>
+                                    <option value="37">Kastamonu</option>
+                                    <option value="38">Kayseri</option>
+                                    <option value="71">Kırıkkale</option>
+                                    <option value="39">Kırklareli</option>
+                                    <option value="40">Kırşehir</option>
+                                    <option value="79">Kilis</option>
+                                    <option value="41">Kocaeli</option>
+                                    <option value="42">Konya</option>
+                                    <option value="43">Kütahya</option>
+                                    <option value="44">Malatya</option>
+                                    <option value="45">Manisa</option>
+                                    <option value="47">Mardin</option>
+                                    <option value="33">Mersin</option>
+                                    <option value="48">Muğla</option>
+                                    <option value="49">Muş</option>
+                                    <option value="50">Nevşehir</option>
+                                    <option value="51">Niğde</option>
+                                    <option value="52">Ordu</option>
+                                    <option value="80">Osmaniye</option>
+                                    <option value="53">Rize</option>
+                                    <option value="54">Sakarya</option>
+                                    <option value="55">Samsun</option>
+                                    <option value="56">Siirt</option>
+                                    <option value="57">Sinop</option>
+                                    <option value="58">Sivas</option>
+                                    <option value="63">Şanlıurfa</option>
+                                    <option value="73">Şırnak</option>
+                                    <option value="59">Tekirdağ</option>
+                                    <option value="60">Tokat</option>
+                                    <option value="61">Trabzon</option>
+                                    <option value="62">Tunceli</option>
+                                    <option value="64">Uşak</option>
+                                    <option value="65">Van</option>
+                                    <option value="77">Yalova</option>
+                                    <option value="66">Yozgat</option>
+                                    <option value="67">Zonguldak</option>
+                                </select>
+                            </div>
+                            <div denet="zorunlu">
+                                <label for="evadres">Ev Adresi</label>
+                                <span>:</span>
+                                <textarea name="evadres" id="evadres"></textarea>
+                            </div>
+                            <div denet="degil">
+                                <label for="askerlik">Askerlik Durumu</label>
+                                <span>:</span>
+                                <select name="askerlik" id="askerlik">
+                                    <option>Seçiniz</option>
+                                    <option>Tecilli</option>
+                                    <option>Yapıldı</option>
+                                    <option>Muaf</option>
+                                </select>
+                            </div>
+                            <div denet="degil">
+                                <label for="askerlikterhistarihi">Askerlik Terhis/Tecil Tarihi</label>
+                                <span>:</span>
+                                <select name="askerlikterhistarihi_gun" id="askerlikterhistarihi">
+                                    <option>Gün</option>
+                                    @for (int i = 1; i <= 31; i++)
+                                    {
+                                        <option value="@i">@i</option>
+                                    }
+                                </select>
+                                <span>-</span>
+                                <select name="askerlikterhistarihi_ay" id="askerlikterhistarihi">
+                                    <option>Ay</option>
+                                    @for (int i = 1; i <= 12; i++)
+                                    {
+                                        <option value="@i">@i</option>
+                                    }
+                                </select>
+                                <span>-</span>
+                                <select name="askerlikterhistarihi_yil" id="askerlikterhistarihi">
+                                    <option>Yıl</option>
+
+                                    @for (int i = 1960; i <= 2015; i++)
+                                    {
+                                        <option value="@i">@i</option>
+                                    }
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="bolumbasligi">Eğitim Bilgileri</div>
+                        <div class="bolum bolum1">
+                            <div denet="zorunlu">
+                                <label for="mezun">En Son Mezun</label>
+                                <span>:</span>
+                                <select name="mezun" id="mezun">
+                                    <option>Seçiniz</option>
+                                    <option>İlkokul</option>
+                                    <option>Ortaokul</option>
+                                    <option>Lise</option>
+                                    <option>Üniversite</option>
+                                </select>
+                            </div>
+                            <div denet="zorunlu">
+                                <label for="mezundal">Mezun Olduğu Dal</label>
+                                <span>:</span>
+                                <input type="text" id="mezundal" name="mezundal" required>
+                            </div>
+                            <div denet="zorunlu">
+                                <label for="mezuntarihi">En Son Mezun Tarih</label>
+                                <span>:</span>
+                                <select name="mezuntarihi_gun" id="mezuntarihi">
+                                    <option>Gün</option>
+                                    @for (int i = 1; i <= 31; i++)
+                                    {
+                                        <option value="@i">@i</option>
+                                    }
+
+
+                                </select>
+                                <span>-</span>
+                                <select name="mezuntarihi_ay" id="mezuntarihi">
+                                    <option>Ay</option>
+
+                                    @for (int i = 1; i <= 12; i++)
+                                    {
+                                        <option value="@i">@i</option>
+                                    }
+                                </select>
+                                <span>-</span>
+                                <select name="mezuntarihi_yil" id="mezuntarihi">
+                                    <option>Yıl</option>
+                                    @for (int i = 1940; i <= 2015; i++)
+                                    {
+                                        <option value="@i">@i</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="bolumbasligi">
+                            Diğer Bilgiler
+                        </div>
+                        <div class="bolum bolum3">
+                            <div denet="zorunlu">
+                                <label for="oncekipozisyon">Önceki İş Posizyonu</label>
+                                <span>:</span>
+                                <input type="text" id="oncekipozisyon" name="oncekipozisyon" required>
+
+                            </div>
+
+                            <div denet="degil">
+                                <label for="mesaj">Mesajınız</label>
+                                <span>:</span>
+                                <textarea name="mesaj" id="mesaj"></textarea>
+                            </div>
+                        </div>
+
+                        <div id="Successfull">
+
+                        </div>
+                        <button>Send</button>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

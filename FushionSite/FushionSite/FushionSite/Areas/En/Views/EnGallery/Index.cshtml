@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Areas/En/Views/FrontLayout.cshtml";
+}
+<script>
+    window.onload = function () {
+        $("#galleryLi").addClass("active");
+        $("#homeLi").removeClass("active");
+    }
+</script>
+<section class="page">
+
+
+    <div class="page-bg"></div>
+    <div class="container">
+        <div class="page-info">
+            <div class="page-title">
+                Gallery
+            </div>
+            <div class="divider-half"></div>
+            <div class="alt-sayfa">
+                <ul>
+                    <li id="factoryLi"><a href="/en/factory">Factory</a></li>
+                    <li id="productionLi"><a href="/en/production">Production</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="uruns" style="margin: 20px 0;">
+                @foreach (var item in (IEnumerable<FashionSiteEntityLibrary.GalleryEntiy.GalleryTable>)ViewData["sendGallery"])
+                {
+                    <div class="urun">
+                        <a href="/Content/Images/Gallery/@item.ImageUrl" class="fancybox" data-fancybox-group="urun">
+                            <img src="/Content/Images/Gallery/@item.ImageUrl" style="height:100% " alt="@item.Title">
+                        </a>
+                    </div>
+                }
+             
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+</section>
